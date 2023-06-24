@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{full_name} - {gym_locker}",
+ "creation": "2023-06-24 14:50:31.861891",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gym_membership",
+  "gym_locker",
+  "column_break_pgzv",
+  "gym_member",
+  "section_break_4sio",
+  "start",
+  "end",
+  "full_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "gym_membership",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gym Membership",
+   "options": "Gym Membership",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pgzv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gym_member",
+   "fieldtype": "Link",
+   "label": "Gym Member",
+   "options": "Gym Member",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gym_locker",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gym Locker",
+   "options": "Gym Locker",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end",
+   "fieldtype": "Date",
+   "label": "End"
+  },
+  {
+   "fieldname": "section_break_4sio",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "gym_membership.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Full Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-24 15:07:10.473211",
+ "modified_by": "Administrator",
+ "module": "Gym Members",
+ "name": "Locker Assignment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

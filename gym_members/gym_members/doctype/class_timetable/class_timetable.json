@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-24 12:50:14.462088",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "day",
+  "start",
+  "end"
+ ],
+ "fields": [
+  {
+   "fieldname": "day",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Day",
+   "options": "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Start"
+  },
+  {
+   "fieldname": "end",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "End"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-24 13:21:11.080400",
+ "modified_by": "Administrator",
+ "module": "Gym Members",
+ "name": "Class Timetable",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

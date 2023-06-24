@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-06-24 13:33:07.389194",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "class",
+  "column_break_5vf2",
+  "trainer",
+  "time_section",
+  "date",
+  "start_time",
+  "column_break_aawn",
+  "end_time",
+  "numbers_section",
+  "capacity",
+  "booked_participants",
+  "actual_participants",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "class",
+   "fieldtype": "Link",
+   "label": "Class",
+   "options": "Class Plan",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5vf2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "class.default_trainer",
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "label": "Trainer",
+   "options": "Gym Trainer"
+  },
+  {
+   "fieldname": "time_section",
+   "fieldtype": "Section Break",
+   "label": "Time"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "column_break_aawn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Data",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "numbers_section",
+   "fieldtype": "Section Break",
+   "label": "Numbers"
+  },
+  {
+   "fetch_from": "class.capacity",
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Capacity",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "booked_participants",
+   "fieldtype": "Int",
+   "label": "Booked Participants",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "actual_participants",
+   "fieldtype": "Int",
+   "label": "Actual Participants"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Class",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-24 13:35:25.970215",
+ "modified_by": "Administrator",
+ "module": "Gym Members",
+ "name": "Gym Class",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

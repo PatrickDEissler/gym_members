@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-06-24 15:38:16.622111",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "trainer_plan_subscription",
+  "column_break_q34a",
+  "trainer",
+  "gym_member",
+  "section_break_lz9f",
+  "rating"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "trainer_plan_subscription",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Trainer Plan Subscription",
+   "options": "Trainer Plan Subscription",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_q34a",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "trainer_plan_subscription.trainer_plan",
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Trainer",
+   "options": "Gym Trainer",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "trainer_plan_subscription.gym_member",
+   "fieldname": "gym_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gym Member",
+   "options": "Gym Member",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_lz9f",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Rating"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-24 18:05:28.641096",
+ "modified_by": "Administrator",
+ "module": "Gym Members",
+ "name": "Trainer Rating",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

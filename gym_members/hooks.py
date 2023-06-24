@@ -7,6 +7,24 @@ app_description = "App for the Frappe Developer\'s Certification (Final Assignme
 app_email = "patrick@alyf.de"
 app_license = "GPL"
 
+doc_events = {
+    "Gym Member": {
+        "before_insert": "gym_members.gym_members.doctype.gym_member.gym_member.full_name",
+        "after_insert": "gym_members.gym_members.doctype.gym_member.gym_member.create_customer",
+    },
+    "Locker Assignment": {
+        "before_insert": "gym_members.gym_members.doctype.locker_assignment.locker_assignment.check_locker_assignment",
+        "after_insert": "gym_members.gym_members.doctype.locker_assignment.locker_assignment.new_locker_assignment",
+    },
+    "Gym Membership": {
+        "before_insert": "gym_members.gym_members.doctype.gym_membership.gym_membership.check_existing_membership",
+    },
+    "Trainer Plan Subscription": {
+        "before_insert": "gym_members.gym_members.doctype.trainer_plan_subscription.trainer_plan_subscription.check_existing_subscription",
+        "after_save": "gym_members.gym_members.doctype.trainer_plan_subscription.trainer_plan_subscription.new_rating",
+    },
+}
+
 # Includes in <head>
 # ------------------
 

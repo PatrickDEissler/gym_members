@@ -1,0 +1,190 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{#####}",
+ "creation": "2023-06-24 11:36:20.749225",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "first_name",
+  "column_break_fq4o",
+  "last_name",
+  "section_break_cfls",
+  "full_name",
+  "section_break_qp7c",
+  "address",
+  "column_break_timk",
+  "dob",
+  "payment_details_section",
+  "iban",
+  "payment_authorization",
+  "customer_info_section",
+  "customer",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_fq4o",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "DoB",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "iban",
+   "fieldtype": "Data",
+   "label": "IBAN"
+  },
+  {
+   "fieldname": "payment_authorization",
+   "fieldtype": "Attach",
+   "label": "Payment Authorization"
+  },
+  {
+   "fieldname": "section_break_qp7c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_timk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_info_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Info"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_cfls",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "default": "Inactive",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Inactive\nFuture\nActive",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "General",
+   "link_doctype": "Gym Membership",
+   "link_fieldname": "gym_member"
+  },
+  {
+   "group": "General",
+   "link_doctype": "Locker Assignment",
+   "link_fieldname": "gym_member"
+  },
+  {
+   "group": "General",
+   "link_doctype": "Trainer Plan Subscription",
+   "link_fieldname": "gym_member"
+  },
+  {
+   "group": "Bookings",
+   "link_doctype": "Class Booking",
+   "link_fieldname": "gym_member"
+  },
+  {
+   "group": "Bookings",
+   "link_doctype": "Cardio Booking",
+   "link_fieldname": "gym_member"
+  },
+  {
+   "group": "Other",
+   "link_doctype": "Trainer Rating",
+   "link_fieldname": "gym_member"
+  },
+  {
+   "group": "Other",
+   "link_doctype": "Fitness Measure",
+   "link_fieldname": "gym_member"
+  }
+ ],
+ "modified": "2023-06-24 16:20:31.153156",
+ "modified_by": "Administrator",
+ "module": "Gym Members",
+ "name": "Gym Member",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Future"
+  },
+  {
+   "color": "Green",
+   "title": "Active"
+  },
+  {
+   "color": "Gray",
+   "title": "Inactive"
+  }
+ ],
+ "title_field": "full_name",
+ "track_changes": 1
+}

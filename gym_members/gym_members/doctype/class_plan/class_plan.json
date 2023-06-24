@@ -1,0 +1,128 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{class_name}",
+ "creation": "2023-06-24 12:50:28.468113",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "class_name",
+  "location",
+  "column_break_o69w",
+  "default_trainer",
+  "capacity",
+  "single_price",
+  "section_break_upio",
+  "start_date",
+  "column_break_l9yu",
+  "end_date",
+  "section_break_pwxi",
+  "description",
+  "timetable_section",
+  "timetable"
+ ],
+ "fields": [
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Location",
+   "options": "Gym Area",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_o69w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_trainer",
+   "fieldtype": "Link",
+   "label": "Default Trainer",
+   "options": "Gym Trainer"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "timetable",
+   "fieldtype": "Table",
+   "label": "Timetable",
+   "options": "Class Timetable"
+  },
+  {
+   "fieldname": "section_break_pwxi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "timetable_section",
+   "fieldtype": "Section Break",
+   "label": "Timetable"
+  },
+  {
+   "fieldname": "class_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Class Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Capacity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_upio",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_l9yu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "single_price",
+   "fieldtype": "Currency",
+   "label": "Single Price",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-24 13:59:47.919959",
+ "modified_by": "Administrator",
+ "module": "Gym Members",
+ "name": "Class Plan",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{YYYY} - {full_name} - {trainer_plan}",
+ "creation": "2023-06-24 15:32:45.892367",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gym_member",
+  "trainer_plan",
+  "column_break_yzsh",
+  "full_name",
+  "trainer",
+  "section_break_axhd",
+  "start",
+  "column_break_n0ql",
+  "end",
+  "section_break_xsm4",
+  "rating",
+  "rating_not_yet_available"
+ ],
+ "fields": [
+  {
+   "fieldname": "gym_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gym Member",
+   "options": "Gym Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "trainer_plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Trainer Plan",
+   "options": "Trainer Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_yzsh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "gym_member.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "trainer_plan.gym_trainer",
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "label": "Trainer",
+   "options": "Gym Trainer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_axhd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_n0ql",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end",
+   "fieldtype": "Date",
+   "label": "End"
+  },
+  {
+   "fieldname": "section_break_xsm4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.start",
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  },
+  {
+   "default": "Ratings will be available 7 days after the start of the trainer plan subscription.",
+   "depends_on": "eval:doc.rating < 0.1",
+   "fieldname": "rating_not_yet_available",
+   "fieldtype": "Read Only"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-24 18:27:09.020795",
+ "modified_by": "Administrator",
+ "module": "Gym Members",
+ "name": "Trainer Plan Subscription",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
