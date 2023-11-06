@@ -7,33 +7,56 @@ app_description = "App for the Frappe Developer\'s Certification (Final Assignme
 app_email = "patrick@alyf.de"
 app_license = "GPL"
 
+# "validate": "gym_members.gym_members.doctype.class_plan.class_plan.validate_start_date",
+
+website_catch_all = "www/not_found"
+
 doc_events = {
-    "Gym Member": {
-        "before_insert": "gym_members.gym_members.doctype.gym_member.gym_member.full_name",
-        "after_insert": "gym_members.gym_members.doctype.gym_member.gym_member.create_customer",
-    },
-    "Locker Assignment": {
-        "before_insert": "gym_members.gym_members.doctype.locker_assignment.locker_assignment.check_locker_assignment",
-        "after_insert": "gym_members.gym_members.doctype.locker_assignment.locker_assignment.new_locker_assignment",
-    },
-    "Gym Membership": {
-        "before_insert": "gym_members.gym_members.doctype.gym_membership.gym_membership.check_existing_membership",
-    },
-    "Trainer Plan Subscription": {
-        "before_insert": "gym_members.gym_members.doctype.trainer_plan_subscription.trainer_plan_subscription.check_existing_subscription",
-        "after_save": "gym_members.gym_members.doctype.trainer_plan_subscription.trainer_plan_subscription.new_rating",
-    },
+	"Class Plan": {
+		"after_insert": "gym_members.gym_members.doctype.class_plan.class_plan.create_classes",
+	},
+	"Class Booking": {
+		"on_submit": "gym_members.gym_members.doctype.class_booking.class_booking.add_new_participant",
+		"on_cancel": "gym_members.gym_members.doctype.class_booking.class_booking.remove_participant",
+        "validate": "gym_members.gym_members.doctype.class_booking.class_booking.validate_booking",
+	},
+	"Gym Member": {
+		"before_insert": "gym_members.gym_members.doctype.gym_member.gym_member.full_name",
+		"after_insert": "gym_members.gym_members.doctype.gym_member.gym_member.create_customer",
+	},
+	"Locker Assignment": {
+		"before_insert": "gym_memwbers.gym_members.doctype.locker_assignment.locker_assignment.check_locker_assignment",
+		"after_insert": "gym_members.gym_members.doctype.locker_assignment.locker_assignment.new_locker_assignment",
+	},
+	"Gym Membership": {
+		"before_insert": "gym_members.gym_members.doctype.gym_membership.gym_membership.check_existing_membership",
+	},
+	"Trainer Plan Subscription": {
+		"before_insert": "gym_members.gym_members.doctype.trainer_plan_subscription.trainer_plan_subscription.check_existing_subscription",
+		"after_save": "gym_members.gym_members.doctype.trainer_plan_subscription.trainer_plan_subscription.new_rating",
+	},
+}
+
+scheduler_events = {
+	"cron": {
+		"0 0 * * *": [
+			"gym_members.gym_members.doctype.class_plan.class_plan.set_status_to_over",
+		],
+        "0 20 * * 0": [ # every sunday at 8PM
+            "gym_members.gym_members.doctype.class_booking.class_booking.create_summaries",
+		],
+	},
 }
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/gym_members/css/gym_members.css"
+app_include_css = "/assets/gym_members/css/gym_members.css"
 # app_include_js = "/assets/gym_members/js/gym_members.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/gym_members/css/gym_members.css"
+web_include_css = "/assets/gym_members/css/gym_members.css"
 # web_include_js = "/assets/gym_members/js/gym_members.js"
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -82,7 +105,7 @@ doc_events = {
 # ------------
 
 # before_install = "gym_members.install.before_install"
-# after_install = "gym_members.install.after_install"
+after_install = "gym_members.install.after_install"
 
 # Uninstallation
 # ------------

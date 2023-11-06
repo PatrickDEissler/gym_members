@@ -15,7 +15,8 @@
   "section_break_16du",
   "start",
   "column_break_jrlq",
-  "end"
+  "end",
+  "amended_from"
  ],
  "fields": [
   {
@@ -68,11 +69,21 @@
   {
    "fieldname": "section_break_16du",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Membership",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-06-24 15:04:45.710408",
+ "modified": "2023-07-15 19:36:34.883375",
  "modified_by": "Administrator",
  "module": "Gym Members",
  "name": "Gym Membership",

@@ -1,0 +1,11 @@
+/* Kommentar: Farbe der Seitenleiste anpassen */
+.layout-side-section {
+    background-color: #293C42;
+    color: #fff !important;
+}
+
+/* Kommentar: Buttons lila Färben */
+.btn-primary {
+    background-color: #5C258D !important;
+    color: #fff;
+}

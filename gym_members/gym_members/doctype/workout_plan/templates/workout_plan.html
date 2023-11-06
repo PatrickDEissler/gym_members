@@ -1,0 +1,28 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title }}</h1>
+<h2>Exercises</h2>
+<br>
+<!-- Table with following Columns: Exercise, Repetitions, Sets
+The table is filled with for-loop in jinja, that renders data of following format (example):
+[{'name': 'ccef7d3058', 'owner': 'Administrator', 'creation': datetime.datetime(2023, 7, 29, 19, 15, 29, 357126), 'modified': datetime.datetime(2023, 7, 31, 13, 11, 58, 46933), 'modified_by': 'Administrator', 'docstatus': 0, 'idx': 1, 'exercise': 'Pushups', 'repetitions': 20, 'sets': 3, 'parent': 'Chest Day', 'parentfield': 'exercise', 'parenttype': 'Workout Plan', 'doctype': 'Workout Plan Exercise'}]
+-->
+<table class="table table-bordered">
+    <tbody>
+        {% for row in exercise %}
+        <tr>
+            <td>{{ row.exercise }}</td>
+            <td>{{ row.sets }} Sets</td>
+            <td>{{ row.repetitions }} Reps</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<h2>Info</h2>
+{{ additional_info }}
+
+{% endblock %}
+
+<!-- this is a sample default web page template -->

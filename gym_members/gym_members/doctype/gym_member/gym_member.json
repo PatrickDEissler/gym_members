@@ -53,8 +53,7 @@
    "fieldname": "dob",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "DoB",
-   "reqd": 1
+   "label": "DoB"
   },
   {
    "fieldname": "payment_details_section",
@@ -148,7 +147,7 @@
    "link_fieldname": "gym_member"
   }
  ],
- "modified": "2023-06-24 16:20:31.153156",
+ "modified": "2023-07-29 16:50:33.641611",
  "modified_by": "Administrator",
  "module": "Gym Members",
  "name": "Gym Member",

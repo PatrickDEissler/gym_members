@@ -7,28 +7,23 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "class",
+  "class_name",
   "column_break_5vf2",
   "trainer",
   "time_section",
   "date",
-  "start_time",
+  "location",
   "column_break_aawn",
+  "start_time",
   "end_time",
   "numbers_section",
   "capacity",
   "booked_participants",
   "actual_participants",
-  "amended_from"
+  "amended_from",
+  "status"
  ],
  "fields": [
-  {
-   "fieldname": "class",
-   "fieldtype": "Link",
-   "label": "Class",
-   "options": "Class Plan",
-   "read_only": 1
-  },
   {
    "fieldname": "column_break_5vf2",
    "fieldtype": "Column Break"
@@ -49,11 +44,13 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
+   "in_preview": 1,
    "label": "Date"
   },
   {
    "fieldname": "start_time",
    "fieldtype": "Time",
+   "in_list_view": 1,
    "label": "Start Time"
   },
   {
@@ -63,12 +60,13 @@
   {
    "fieldname": "end_time",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "End Time"
   },
   {
    "fieldname": "numbers_section",
    "fieldtype": "Section Break",
-   "label": "Numbers"
+   "label": "Participants"
   },
   {
    "fetch_from": "class.capacity",
@@ -98,13 +96,37 @@
    "options": "Gym Class",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "class_name",
+   "fieldtype": "Link",
+   "label": "Class Name",
+   "options": "Class Plan"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Gym Area"
+  },
+  {
+   "default": "Available",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nFull\nOver",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
- "is_submittable": 1,
- "links": [],
- "modified": "2023-06-24 13:35:25.970215",
+ "links": [
+  {
+   "link_doctype": "Class Booking",
+   "link_fieldname": "booked_class"
+  }
+ ],
+ "modified": "2023-07-15 20:20:23.682962",
  "modified_by": "Administrator",
  "module": "Gym Members",
  "name": "Gym Class",
@@ -124,8 +146,23 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Green",
+   "title": "Available"
+  },
+  {
+   "color": "Orange",
+   "title": "Full"
+  },
+  {
+   "color": "Gray",
+   "title": "Over"
+  }
+ ],
+ "title_field": "class_name",
  "track_changes": 1
 }

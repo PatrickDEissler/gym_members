@@ -10,6 +10,7 @@
  "field_order": [
   "date",
   "gym_member",
+  "member_name",
   "measures_section",
   "calories_intake_in_kcal",
   "weight",
@@ -58,11 +59,18 @@
    "options": "Fitness Measure",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fetch_from": "gym_member.full_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-24 15:53:28.465525",
+ "modified": "2023-07-15 21:59:14.914281",
  "modified_by": "Administrator",
  "module": "Gym Members",
  "name": "Fitness Measure",
